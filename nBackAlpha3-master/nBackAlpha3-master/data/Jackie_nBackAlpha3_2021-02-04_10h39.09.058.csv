@@ -1,0 +1,6 @@
+trialResp.keys,trialResp.corr,trials1.thisRepN,trials1.thisTrialN,trials1.thisN,trials1.thisIndex,trials1.ran,square,loc1,loc2,corrAns,participant,session,date,expName,psychopyVersion,OS,frameRate
+,1,0,0,0,0,1,6,0.2,0,,Jackie,001,2021-02-04_10h39.09.058,nBackAlpha3,2020.1.3,MacIntel,60
+,0,0,1,1,1,1,6,0.2,0,space,Jackie,001,2021-02-04_10h39.09.058,nBackAlpha3,2020.1.3,MacIntel,60
+,1,0,2,2,2,1,2,0,0.2,,Jackie,001,2021-02-04_10h39.09.058,nBackAlpha3,2020.1.3,MacIntel,60
+,1,0,3,3,3,1,9,0.2,-0.2,,Jackie,001,2021-02-04_10h39.09.058,nBackAlpha3,2020.1.3,MacIntel,60
+,0,0,4,4,4,1,9,0.2,-0.2,space,Jackie,001,2021-02-04_10h39.09.058,nBackAlpha3,2020.1.3,MacIntel,60

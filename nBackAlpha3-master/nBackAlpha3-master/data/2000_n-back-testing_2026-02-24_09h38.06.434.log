@@ -1,0 +1,25 @@
+7.8764 	WARNING 	User requested fullscreen with size [1088  614], but screen is actually [1920, 1200]. Using actual size
+9.4424 	WARNING 	t of last frame was 38.68ms (=1/25)
+9.5917 	WARNING 	t of last frame was 21.46ms (=1/46)
+9.6202 	WARNING 	t of last frame was 28.54ms (=1/35)
+9.6856 	WARNING 	t of last frame was 48.85ms (=1/20)
+9.7542 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+11.1489 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+11.6194 	WARNING 	fillColorSpace parameter is deprecated. Please use colorSpace instead.
+11.6195 	WARNING 	lineColorSpace parameter is deprecated. Please use colorSpace instead.
+11.6838 	WARNING 	fillColorSpace parameter is deprecated. Please use colorSpace instead.
+11.6838 	WARNING 	lineColorSpace parameter is deprecated. Please use colorSpace instead.
+11.7410 	WARNING 	fillColorSpace parameter is deprecated. Please use colorSpace instead.
+11.7411 	WARNING 	lineColorSpace parameter is deprecated. Please use colorSpace instead.
+22.9290 	DATA 	Mouse: Left button down, pos=(1080,441)
+23.0229 	DATA 	Mouse:  Left button up, pos=(1080,441)
+23.2230 	DEPRECATION 	Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime() )
+23.2262 	DATA 	Keypress: space
+24.0570 	DATA 	Keypress: space
+24.2783 	DEPRECATION 	Clock.add() is deprecated in favor of .addTime() due to the counterintuitive design (it added time to the baseline, which reduced the values returned from getTime() )
+24.2833 	DATA 	Keypress: space
+24.8898 	DATA 	Keypress: escape
+25.3165 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
