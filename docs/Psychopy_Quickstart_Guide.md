@@ -129,17 +129,19 @@ cd %USERPROFILE\Documents
 
 VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
 
-Since It is better to see someone use VS-Code rather than in text I recommend you to watch the first 7 minutes of this video which explains the "Explorer" part of the "Activity Bar"
+Since it is better to visualize someone using VS-Code rather than in text, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of opening VS-Code and explains the "Explorer" part of the "Activity Bar" of VS-Code.
+
+Be sure to have VS-Code open along these videos so you can familiarize yourself with the application.
 
 [VS Code for Absolute Beginners](https://www.youtube.com/watch?v=lWEKiak0WVU)
 
-Also I recommend to watch the first 12 minutes of this video which gets more in depth of the different activity bar uses and AI chat functions
+Another recommended video is the following, in which the first 12 minutes are enough for you to know the other functions such as extensions and the use of Copilot AI. 
 
 [Learn Visual Studio Code in 15 minutes: 2026 Official Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=f8_uF_IDV50)
 
 ### 4a. Installing Necessary Extension
 
-As this tutorial is based on using VS-Code we are going to need to install some extensions 
+As this tutorial works within the VS-Code enviroment,  we are going to need to install some extensions to run other types of files such as Jupyter Notebook files known to finish in `.ipynb`.
 
 1. Open VS Code.
 2. Click the **Extensions** icon in the left sidebar (it looks like four squares, or press `Ctrl+Shift+X`).
@@ -306,3 +308,7 @@ Normal terminal (PowerShell):        Python REPL (interactive Python):
 
 *Tilburg University Lifespan Lab — EMA In-Lab Protocol*
 *For questions, contact your supervisor or open an issue on the project GitHub repository.*
+
+```
+
+```
