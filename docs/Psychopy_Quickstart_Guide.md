@@ -22,7 +22,7 @@ This guide is organized into three levels.
 
 ## The Big Picture: How the Tools Connect
 
-<img src="https://i.imgur.com/AQR1vt8.jpeg" alt="Big Picture Diagram" width="325">
+<img src="https://i.imgur.com/AQR1vt8.jpeg" alt="Big Picture Diagram" width="650">
 
 | Tool | What it does |
 |------|--------------|
@@ -41,13 +41,11 @@ Powershell is a **a command-line shell and scripting platform for automation and
 
 Windows blocks scripts by default. You must change this setting once before anything else will work. This is the first line of code you going to run!
 
-1. Press `Win`, type **PowerShell**, right-click it, and choose **Run as administrator**. <img src="https://www.top-password.com/blog/wp-content/uploads/2016/03/run-powershell-from-cortana.png" alt="Run PowerShell as administrator" width="325">
+1. Press `Win`, type **PowerShell**, right-click it, and choose **Run as administrator**. <img src="https://i0.wp.com/morgantechspace.com/wp-content/uploads/2021/09/powershell-run-as-administrator-1.png?w=973&ssl=1" width="400">
 2. Paste the following command and press `Enter`:
-   
-   ```powershell
+  
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
-
+  
 3. Type `Y` and press `Enter` if prompted to confirm.
 4. Close PowerShell.
 
