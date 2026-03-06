@@ -78,7 +78,7 @@ Complete these downloads before starting any other step.
 | 6 | **Pavlovia account** | [pavlovia.org](https://pavlovia.org/) | Free for researchers |
 | 7 | **m-Path account** | [m-path.io](https://m-path.io/) | Coordinate with your supervisor |
 
-### 2c. Optional ( To see if the Psychopy Enviroment was Installed Correctly)
+### 2c. Additional Program to see if the Psychopy Enviroment was Installed Correctly)
 
 | # | What | Where to get it | Notes |
 |---|------|-----------------|-------|
