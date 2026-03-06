@@ -1,3 +1,4 @@
+
 # Quickstart Guide
 
 **EMA In-Lab Protocol — Tilburg University Lifespan Lab**
@@ -14,7 +15,7 @@ This guide is organized into three levels.
 
 | Level | Goal | Steps to complete |
 |-------|------|-------------------|
-| **Level 1** | Downloading necessary files |
+| **Level 1** | Downloading necessary files | Sections 1 → 2
 | **Level 2** | Familiarizing with the new applications | Sections 3 → 4 → 5 → 6 |
 | **Level 3** | Edit or adjust an existing task | Sections 1 → 2 → 3 → 4 → 5 → 7 |
 
@@ -45,6 +46,7 @@ Windows blocks scripts by default. You must change this setting once before anyt
    ```powershell
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
+
 3. Type `Y` and press `Enter` if prompted to confirm.
 4. Close PowerShell.
 
@@ -91,29 +93,29 @@ Once Miniconda is intalled you will have a new application called **Anaconda Pro
 
 To build the `psychopy_env` workspace that we need for all scripts to run PsychoPy tasks we need to:
 
-1. Press `Win`, type **Anaconda Prompt**, and open it.
-2. Change to the folder where you saved `psychopy_env.yml`. You can do this by copying and pasting the code below. For example, if you saved it in Downloads:
+1. 1.) Press `Win`, type **Anaconda Prompt**, and open it.
+2. 2.) *Skip this step if your `psychopy_env.yml` is in the Downloads folder*. To change where **Anaconda Prompt** searches for the folder containing the saved`psychopy_env.yml`. Copy and paste the code below
 
 ```cmd
-cd %USERPROFILE%\Downloads
+cd %USERPROFILE%\
           or if you have psychopy_env.yml saved in Documents
 cd %USERPROFILE\Documents
 ```
 
-3. Create the PsychoPy environment by running this code:
+3. 3.) Create the PsychoPy environment by running this code:
    
    ```cmd
    conda env create -f psychopy_env.yml
    ```
    
-   This downloads and installs all required packages. It may take 5–15 minutes.
-4. Confirm it succeeded — you should see a `psychopy_env` folder here:
+   4.) This downloads and installs all required packages. It may take 5–15 minutes.
+4. 5.) To confirm it succeeded — you should see a `psychopy_env` folder here:
    
    ```
    C:\Users\<YourName>\miniconda3\envs\psychopy_env\
    ```
    
-   You can also check by running this code in **Anaconda Prompt**:
+   6.) You can also check by running this code in **Anaconda Prompt**:
    
    ```cmd
    conda env list
@@ -123,38 +125,55 @@ cd %USERPROFILE\Documents
 
 ---
 
+## Section 4 — GitHub Familiarization
+
+Like anything new, GitHub looks scary and contains a lot of new terminology which we are not use to. Terms like **"Repositories"**, **"Commit"**, **"Pull Requests"** and **"Branch"** are common terms in the GitHub community
+
+You have access to this document through the *repository* known as `EMA-In-Lab-Protocol`. A *repository* is nothing more than a *big folder* which was uploaded to the cloud in GitHub. It contains different files such as this PDF document, other file types such as jupyter notebook files (.ipynb), python files (.py) and can also contain even more folders inside of it.
+
+As you can see the `EMA-In-Lab-Protocol` has a lot of different files in it. This Quick Guide PDF was just one of those. In order to use this protocl we will want to clone (download) the whole repository into your computer.
+
+There are different ways of saving (cloning) a repository into your computer. The simplest way of doing that is to go to the **"Green Box** that has **"Code** written on it, **click** on it and **click** **Download Zip**
+(image)
+
+Once the Zip file is download, be sure to move it to an easy accessible place in your files, or you can just leave it at downloads if you want.
+
+For now that is all you have to do in GitHub, but if you wish to 
+
 ## Section 4 — VS Code Familirization
 
 ### 4a. User Interface
 
-VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
+Just like GitHUb, VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
 
-Since it is better to visualize someone using VS-Code rather than in text, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of opening VS-Code and explains the "Explorer" part of the "Activity Bar" of VS-Code.
+Since it is better to visualize someone using VS-Code rather than in text, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of installing and opening VS-Code. The first 7 minutes explains the "Explorer" part of the "Activity Bar" of VS-Code.
 
 Be sure to have VS-Code open along these videos so you can familiarize yourself with the application.
 
 [VS Code for Absolute Beginners](https://www.youtube.com/watch?v=lWEKiak0WVU)
 
-Another recommended video is the following, in which the first 12 minutes are enough for you to know the other functions such as extensions and the use of Copilot AI. 
+Another recommended video is the following, in which the first 12 minutes are enough for you to know the other functions such as extensions and the use of Copilot AI.
 
 [Learn Visual Studio Code in 15 minutes: 2026 Official Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=f8_uF_IDV50)
 
-### 4a. Installing Necessary Extension
+### 4b. Installing Necessary Extension
 
 As this tutorial works within the VS-Code enviroment,  we are going to need to install some extensions to run other types of files such as Jupyter Notebook files known to finish in `.ipynb`.
 
 1. Open VS Code.
 2. Click the **Extensions** icon in the left sidebar (it looks like four squares, or press `Ctrl+Shift+X`).
-3. Search for **Python** (publisher: Microsoft) and click **Install**.
+3. Search for **Jupyter** (publisher: Microsoft) and click **Install**.
+4. Search for **GitHub Copilot Chat** (publisher: GitHub) and click **Install**
+5. Search for **Python** (publisher: Microsoft) and click **Install**
 
-### 4b. Open the project folder
+### 4c. Open the project folder
 
 1. In VS Code, go to **File → Open Folder**.
 2. Select the folder that contains the experiment files (e.g. `nBackAlpha3-master`).
    
    > **Important:** Always open the experiment's own folder, not a parent folder. This ensures all file paths in the scripts point to the right places.
 
-### 4c. Select the Python interpreter
+### 4d. Select the Python interpreter
 
 1. Look at the **bottom-right corner** of the VS Code window. You will see a Python version number (e.g. `Python 3.11.x`).
    
@@ -172,7 +191,7 @@ As this tutorial works within the VS-Code enviroment,  we are going to need to i
    Python 3.10.x ('psychopy_env': conda)
    ```
 
-### 4d. Activate the environment in the terminal
+### 4e. Activate the environment in the terminal
 
 1. Go to **Terminal → New Terminal** (or press ``Ctrl+` ``).
 2. The terminal should automatically show `(psychopy_env)` at the start of the prompt:
@@ -308,6 +327,10 @@ Normal terminal (PowerShell):        Python REPL (interactive Python):
 
 *Tilburg University Lifespan Lab — EMA In-Lab Protocol*
 *For questions, contact your supervisor or open an issue on the project GitHub repository.*
+
+```
+
+```
 
 ```
 
