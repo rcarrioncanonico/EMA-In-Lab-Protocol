@@ -187,10 +187,13 @@ As this tutorial works within the VS-Code enviroment,  we are going to need to i
 
 1. 1.) In VS Code, go to **File → Open Folder**.  You can find **"File"** on the top-left corner of VS-Code
 2. 2.) Navigate to Downloads Folder
-3. 3.) Select the folder known as `EMA-In-Lab-Protocol-main` (the one we downloaded and extracted in **Section 4**. !![Lxs2qDJ.png (885×46)](https://i.imgur.com/Lxs2qDJ.png)
-4. 4.) Once selected you will see all of the files in the "Explorer" icon of the "Activity Bar" which is the "paper looking" icon on the left hand side of VS-Code.
+3. 3.) **Select** the folder known as `EMA-In-Lab-Protocol-main` (the one we downloaded and extracted in **Section 4**. ![A9dIqrg.png (706×551)](https://i.imgur.com/A9dIqrg.png)
+4. 4.) Once selected, you will see all of the files of the repository  in the "Explorer" icon of the "Activity Bar" which is the "paper looking" icon on the left hand side of VS-Code.
+5. 
 
-Congratulations you are free to explore the files inside VS-Code, now that you have the jupyter extension and the enviroment set up we can
+Congratulations! you are free to explore the files of the repository inside VS-Code
+
+## Section 6 - Navigating Jupyter Notebook
 
 ```
 
