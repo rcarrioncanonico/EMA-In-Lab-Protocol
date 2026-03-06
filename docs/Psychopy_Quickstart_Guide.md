@@ -1,4 +1,3 @@
-
 # Quickstart Guide
 
 **EMA In-Lab Protocol — Tilburg University Lifespan Lab**
@@ -67,6 +66,8 @@ Complete these downloads before starting any other step.
 | 3 | **psychopy_env.yml** | [github.com/rcarrioncanonico/Momentary-Assesment-Tools](https://github.com/rcarrioncanonico/Momentary-Assesment-Tools/blob/main/psychopy_env.yml) | Click **Raw**, then `Ctrl+S` to save as `psychopy_env.yml` |
 | 4 | **Git** | [Git - Install](https://git-scm.com/install/) | Necessary to Push code to Pavlovia |
 
+> **Important:** During Git Installation there will be a window that will ask you to choose **the default editor used by Git** be sure to select Visual Studio Code just like in this image (image) (its on my WA) You can click next on the other configurations.
+
 ### 2b. Needed Accounts
 
 | # | What | Where to get it | Notes |
@@ -129,24 +130,32 @@ cd %USERPROFILE\Documents
 
 Like anything new, GitHub looks scary and contains a lot of new terminology which we are not use to. Terms like **"Repositories"**, **"Commit"**, **"Pull Requests"** and **"Branch"** are common terms in the GitHub community
 
-You have access to this document through the *repository* known as `EMA-In-Lab-Protocol`. A *repository* is nothing more than a *big folder* which was uploaded to the cloud in GitHub. It contains different files such as this PDF document, other file types such as jupyter notebook files (.ipynb), python files (.py) and can also contain even more folders inside of it.
+You have access to this document through the public *repository* known as `EMA-In-Lab-Protocol` ([Link](https://github.com/rcarrioncanonico/EMA-In-Lab-Protocol)). A *repository* is nothing more than a *big folder* which was uploaded to the cloud in GitHub. It contains different files such as this PDF document, other file types such as jupyter notebook files (.ipynb), python files (.py) and can also contain even more folders inside of it.
 
-As you can see the `EMA-In-Lab-Protocol` has a lot of different files in it. This Quick Guide PDF was just one of those. In order to use this protocl we will want to clone (download) the whole repository into your computer.
+As you can see the `EMA-In-Lab-Protocol` has a lot of different files in it. This Quick Guide PDF was just one of those files inside that repository. In order to use this protocol we will want to clone (download) the whole repository into your computer.
 
 There are different ways of saving (cloning) a repository into your computer. The simplest way of doing that is to go to the **"Green Box** that has **"Code** written on it, **click** on it and **click** **Download Zip**
 (image)
 
-Once the Zip file is download, be sure to move it to an easy accessible place in your files, or you can just leave it at downloads if you want.
+Once the Zip file is download. You will find it in yout files in "Downloads", hover the cursor on the zip file, *right click* and then *extract everything* and confirm the following pop-ups.
+(image)
 
-For now that is all you have to do in GitHub, but if you wish to 
+A new folder with the same name of the zip file will be created, be sure to remember where it is located, which would be in the Downloads folder if you don´t decide to change its location.
 
-## Section 4 — VS Code Familirization
+## Recommended- Obtain Copilot Pro
 
-### 4a. User Interface
+Coding has never been easier with the help of AI and students and teachers can get Copilot Pro for free for 2 years. Be sure to link your account to the GitHub Education benefits following the instructions of this [Link](https://github.com/settings/education/benefits).
+
+For now that is all you have to do in GitHub, but if you wish to know more about it, I recommend this quick 10 minute video to know more about.
+[How To Use GitHub For Beginners - YouTube](https://www.youtube.com/watch?v=a9u2yZvsqHA&t=325s)
+
+## Section 5 — VS Code Familiarization
+
+### 5a. User Interface
 
 Just like GitHUb, VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
 
-Since it is better to visualize someone using VS-Code rather than in text, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of installing and opening VS-Code. The first 7 minutes explains the "Explorer" part of the "Activity Bar" of VS-Code.
+Since it is better to visualize someone using VS-Code rather than in text, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of installing and opening VS-Code. These 7 minutes also explains the "Explorer" part of the "Activity Bar" of VS-Code.
 
 Be sure to have VS-Code open along these videos so you can familiarize yourself with the application.
 
@@ -161,177 +170,16 @@ Another recommended video is the following, in which the first 12 minutes are en
 As this tutorial works within the VS-Code enviroment,  we are going to need to install some extensions to run other types of files such as Jupyter Notebook files known to finish in `.ipynb`.
 
 1. Open VS Code.
-2. Click the **Extensions** icon in the left sidebar (it looks like four squares, or press `Ctrl+Shift+X`).
+2. Click the **Extensions** icon in the left sidebar (it looks like four squares, or press `Ctrl+Shift+X`). (image)
 3. Search for **Jupyter** (publisher: Microsoft) and click **Install**.
 4. Search for **GitHub Copilot Chat** (publisher: GitHub) and click **Install**
 5. Search for **Python** (publisher: Microsoft) and click **Install**
 
-### 4c. Open the project folder
+### 4c. Open the Protocol Folder
 
-1. In VS Code, go to **File → Open Folder**.
-2. Select the folder that contains the experiment files (e.g. `nBackAlpha3-master`).
-   
-   > **Important:** Always open the experiment's own folder, not a parent folder. This ensures all file paths in the scripts point to the right places.
+1. In VS Code, go to **File → Open Folder**.  You can find **"File"** on the top-left corner of VS-Code
+2. Navigate to Downloads Folder
+3. Select the folder known as `EMA-In-Lab-Protocol-main` (the one we downloaded and extracted in **Section 4**.
+4. Once selected you will see all of the files in the "Explorer" icon of the "Activity Bar" which is the "paper looking" icon on the left hand side of VS-Code (image)
 
-### 4d. Select the Python interpreter
-
-1. Look at the **bottom-right corner** of the VS Code window. You will see a Python version number (e.g. `Python 3.11.x`).
-   
-   ```
-   ┌─────────────────────── VS Code status bar ───────────────────────┐
-   │                                            [Python 3.11.x] [⚡]  │
-   └──────────────────────────────────────────────────────────────────┘
-                                                        ▲
-                                               click here
-   ```
-2. Click that version number. A list appears at the top of the screen.
-3. Choose the entry that contains **psychopy_env** — it will look something like:
-   
-   ```
-   Python 3.10.x ('psychopy_env': conda)
-   ```
-
-### 4e. Activate the environment in the terminal
-
-1. Go to **Terminal → New Terminal** (or press ``Ctrl+` ``).
-2. The terminal should automatically show `(psychopy_env)` at the start of the prompt:
-   ```
-   (psychopy_env) PS C:\Users\YourName\...>
-   ```
-3. If it does not activate automatically, type:
-   ```cmd
-   conda activate psychopy_env
-   ```
-
----
-
-## Section 5 — Run a Task (Level 1+)
-
-### Verify PsychoPy works first
-
-Before running a real experiment, confirm your setup is correct:
-
-1. In VS Code, open a new file (`Ctrl+N`), paste the code below, and save it as `sanity_check.py` inside your project folder.
-   
-   ```python
-   from psychopy import visual
-   import time
-   
-   win = visual.Window([800, 600], color='black', monitor='testMonitor')
-   text = visual.TextStim(win, text='PsychoPy is Working!', color='white', height=0.1)
-   text.draw()
-   win.flip()
-   time.sleep(2)
-   win.close()
-   print('Sanity check complete!')
-   ```
-2. Right-click the file in the Explorer panel on the left → **Run Python File in Terminal**.
-3. A black window should appear for 2 seconds with the text **"PsychoPy is Working!"**, then close.
-4. The terminal should print `Sanity check complete!`
-
-> If you see an error instead, see the Troubleshooting section at the end of this guide.
-
-### Run the N-back task
-
-1. In VS Code Explorer, navigate to `nBackAlpha3-master`.
-2. Right-click `nBackAlpha3.py` → **Run Python File in Terminal**.
-3. The task window will appear. Press `s` to start the trials.
-
----
-
-## Section 6 — EMA Deployment Pipeline (Level 2)
-
-To deliver tasks to participants via their smartphones:
-
-```
-Your .py task  →  push to Pavlovia  →  Pavlovia hosts web version
-                                                 ↑
-                                         m-Path sends notification link
-                                         to participant's phone
-```
-
-1. **Push to Pavlovia**: Commit your task folder to a Pavlovia-linked GitLab repository. Your supervisor will help you set this up.
-2. **Set task to Running**: In the Pavlovia dashboard, change the experiment status from *Piloting* to *Running*.
-3. **Configure m-Path**: In the m-Path study configuration, paste the Pavlovia task URL. m-Path will embed it in participant notifications.
-4. **Test end-to-end**: Have a test participant (yourself) receive a notification and complete the task on a phone to verify the full pipeline.
-
----
-
-## Section 7 — Editing a Task (Level 3)
-
-Before making any changes:
-
-1. **Make a backup**: Copy the entire experiment folder and rename the copy (e.g. append `_backup_YYYYMMDD`).
-2. Open the `Configuration_Modification_Tutorial.ipynb` notebook in VS Code for step-by-step guidance on which parameters to change.
-3. Common edit targets in `nBackAlpha3.py`:
-   
-   | What you want to change | Variable to edit |
-|-------------------------|-----------------|
-| How long each stimulus appears | `trialClock` duration / `time.sleep()` value |
-| Number of trials | `nReps` in the trial loop |
-| Stimulus size or color | `height`, `color` arguments in `TextStim` or `ImageStim` |
-   
-   
-4. After each change, re-run the sanity check (Section 5) and then run the task briefly to verify nothing broke.
-
----
-
-## Terminal Quick Reference
-
-| Situation | What to type |
-|-----------|-------------|
-| Activate environment | `conda activate psychopy_env` |
-| Check active environment | `conda info --envs` |
-| You see `>>>` (Python REPL) | Type `exit()` to return to normal terminal |
-| Run a Python file | `python filename.py` |
-| Re-create environment from scratch | `conda env create -f psychopy_env.yml` |
-| List installed packages | `conda list` |
-
-### Understanding the two terminal modes
-
-```
-Normal terminal (PowerShell):        Python REPL (interactive Python):
-  (psychopy_env) PS C:\> _               >>>  _
-        ▲                                      ▲
-  Run: python script.py             Stuck here? Type: exit()
-       conda commands
-```
-
----
-
-## Troubleshooting
-
-| Symptom | Likely cause | Fix |
-|---------|-------------|-----|
-| `conda: command not found` | Miniconda not added to PATH | Reinstall Miniconda and check "Add to PATH" option |
-| `psychopy_env.yml not found` | Wrong directory in Anaconda Prompt | Run `cd %USERPROFILE%\Downloads` (or wherever you saved the file) |
-| VS Code shows wrong Python version | Interpreter not set | See Section 4c |
-| PsychoPy window opens then instantly crashes | `core.quit()` called in Jupyter context | Remove `core.quit()` calls; use `win.close()` only |
-| `FileNotFoundError` when running task | Wrong working directory | Ensure you opened the experiment folder in VS Code (Section 4b) |
-| Scripts won't run in terminal | Windows execution policy | Re-run the command in Section 1 as administrator |
-| `ModuleNotFoundError: psychopy` | Wrong environment active | Activate `psychopy_env` (Section 4d) |
-
----
-
-## Further Reading
-
-| Resource | URL | Best for |
-|----------|-----|---------|
-| Neural Data Science setup guide | https://neuraldatascience.io/b-setup/introduction/ | Complete beginner setup |
-| Pro Git Book | https://git-scm.com/book/en/v2 | Learning Git version control |
-| Pavlovia documentation | https://pavlovia.org/docs | Deploying experiments online |
-| m-Path manual | https://manual.m-path.io/ | EMA scheduling and linking |
-| PsychoPy documentation | https://www.psychopy.org/documentation.html | Experiment scripting reference |
-
----
-
-*Tilburg University Lifespan Lab — EMA In-Lab Protocol*
-*For questions, contact your supervisor or open an issue on the project GitHub repository.*
-
-```
-
-```
-
-```
-
-```
+Congratulations we are all set to start working in the Jupyter Notes
