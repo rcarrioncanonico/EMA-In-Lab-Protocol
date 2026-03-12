@@ -3,14 +3,14 @@
 **EMA In-Lab Protocol — Tilburg University**
 
 > **Who is this guide for?**
-> Students with little or no programming experience who need to set up and use 
+> Students with little or no programming experience who need to set up and use
 > PsychoPy-based cognitive tasks on a Windows PC. No prior coding knowledge is assumed.
 
 ---
 
 ## How to Use This Guide
 
-This guide is organized into three levels.
+This guide is organized into two levels.
 
 | Level | Goal | Steps to complete |
 |-------|------|-------------------|
@@ -97,8 +97,6 @@ Download and install these applications in order to get your computer ready for 
 
 ## Section 3 — Miniconda Use
 
----
-
 Once Miniconda is intalled you will have a new application called **Anaconda Prompt** which looks like this:
 
 <img src="https://i.imgur.com/8wSNduI.png" alt="Anaconda Prompt" width="200">
@@ -120,15 +118,11 @@ To build the `psychopy_env` workspace that we need for all scripts to run Psycho
    <br> <br>
 5. To confirm it succeeded — you should see a `psychopy_env` folder here:
 
-```
-C:\Users\<YourName>\miniconda3\envs\psychopy_env\
-```
-<br>
+C:\Users\<YourName>\miniconda3\envs\psychopy_env
 
 6.) You can also check by running this code in **Anaconda Prompt**:
 
 **conda env list**
-
 
 `psychopy_env` should appear in the list.
 
@@ -136,7 +130,7 @@ It will appear something like this: <img src="https://i.imgur.com/vvyGGit.png" a
 
 ---
 
-## Section 4 — GitHub Familiarization
+## Section 4: GitHub Familiarization
 
 Like anything new, GitHub looks scary and contains a lot of new terminology which we are not use to. Terms like **"Repositories"**, **"Commit"**, **"Pull Requests"** and **"Branch"** are common terms in the GitHub community
 
@@ -170,6 +164,9 @@ For now that is all you have to do in GitHub, but if you wish to know more about
 
 ## Section 5 — VS Code Familiarization
 
+
+
+
 ### 5a. User Interface
 
 Just like GitHUb, VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
@@ -196,7 +193,7 @@ On the "Activity Bar" on the left hand sight of VS-Code you will see an Icon wit
 
 ### 5c. Open the Protocol Folder
 
-1. 1.) In VS Code, go to **File → Open Folder**.  You can find **"File"** on the top-left corner of VS-Code
+1. 1.) In VS Code, go to **File --> Open Folder**.  You can find **"File"** on the top-left corner of VS-Code
 2. 2.) Navigate to Downloads Folder
 3. 3.) **Select** the folder known as `EMA-In-Lab-Protocol-main` (the one we downloaded and extracted in **Section 4**. <img src="https://i.imgur.com/A9dIqrg.png" alt="Folder selection" width="325">
 4. 4.) Once selected, you will see all of the files of the repository  in the "Explorer" icon of the "Activity Bar" which is the "paper looking" icon on the left hand side of VS-Code.
@@ -204,7 +201,9 @@ On the "Activity Bar" on the left hand sight of VS-Code you will see an Icon wit
 
 **Congratulations!** you are free to explore the files of the repository inside VS-Code. From now on this tutorial will take place inside VS-Code. All the files needed to continue were already open during section **5c**. Your next step is to open Jupyter_Starter file inside VS-Code.
 
+```
 
+```
 
 ```
 
