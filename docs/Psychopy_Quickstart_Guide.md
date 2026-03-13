@@ -77,7 +77,7 @@ Download and install these applications in order to get your computer ready for 
 |---|------|-----------------|-------|
 | 1 | **VS Code** | [Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/Download) | Choose the Windows installer or MacOs depending on your PC |
 | 2 | **Miniconda** | [Download Anaconda Distribution Anaconda](https://www.anaconda.com/download) | Scroll to the bottom to find miniconda installer and follow the installation process |
-| 3 | **psychopy_env.yml** | [github.com/rcarrioncanonico/Momentary-Assesment-Tools](https://github.com/rcarrioncanonico/Momentary-Assesment-Tools/blob/main/psychopy_env.yml) | Click **Raw**, then `Ctrl+S` to save as `psychopy_env.yml` |
+| 3 | **psychopy_env.yml** | [github.com/rcarrioncanonico/Momentary-Assesment-Tools](https://github.com/rcarrioncanonico/Momentary-Assesment-Tools/blob/main/psychopy_env.yml) | Click on Downloads and save as `psychopy_env.yml` be sure its not saved as a txt file |
 | 4 | **Git** | [Git - Install](https://git-scm.com/install/) | Necessary to Push code to Pavlovia |
 
 > **Important:** During Git Installation there will be a window that will ask you to choose a default editor, be sure to select Visual Studio Code just like in this image:<img src="https://i.imgur.com/0J9Z70F.jpeg" alt="Git editor selection" width="325"> This is the only modification you have to do during Git installation.
