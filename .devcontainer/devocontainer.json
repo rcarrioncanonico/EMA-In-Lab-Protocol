@@ -1,0 +1,19 @@
+{
+  "name": "PsychoPy Research Environment",
+  "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
+  "features": {},
+  "postCreateCommand": "conda env create -f psychopy_env.yml && conda run -n psychopy_env python -m pip install --upgrade pip",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/envs/psychopy_env/bin/python"
+      }
+    }
+  }
+}
