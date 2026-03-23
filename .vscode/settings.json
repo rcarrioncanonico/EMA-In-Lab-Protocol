@@ -1,0 +1,8 @@
+{
+    "deno.enable": true,
+    "editor.semanticHighlighting.enabled": false,
+    "deno.suggest.imports.hosts": {
+        "https://deno.land": true,
+        "https://esm.sh": true
+    }
+}
