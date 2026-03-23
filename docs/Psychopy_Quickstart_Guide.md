@@ -1,20 +1,86 @@
-
-Quickstart_Guide
-Save as
-Markdown
-HTML
-PDF
-Send Feedback
-
 # Quickstart Guide
 
 **EMA In-Lab Protocol — Tilburg University**
 
 > **Who is this guide for?**
 > Students with little or no programming experience who need to set up and use
-> PsychoPy-based cognitive tasks on a Windows PC. No prior coding knowledge is assumed.
+> smartphone-based cognitive tasks. No prior coding knowledge is assumed.
+> 
+> **Goals of the tutorial:**
+> Neuropsychological tasks are usually administered using pen-and-paper tests in a controlled environment. However, cognitive symptoms often fluctuate throughout the day, and in-lab tests may not reflect daily cognitive functioning. To address this issue, we aim to develop and test short cognitive tasks or games that run in a web browser on your smartphone. This allows us to test in more natural environments and administer tasks multiple times a day or week. This tutorial will explain how to program and use those tasks and how to set up an experience sampling (ESM) study.
+> 
+> **Contents:**
+> During this project, you will work with various tasks/games that can be performed on a smartphone or in a web browser. For this, you need several things:
+> 
+> - A script with the code of the task: The tasks are coded using **JavaScript** or **Python**. **JavaScript** is a coding language used to create web applications that run in the browser. **Python** can also be used for web development and is generally considered an easier language for beginners, but it requires a translator to run in a browser.
+> - A code editor: We will use **VS Code**
+> - A server to make the experiment available to participants and store the results: For this we will use **Pavlovia**. (Pavlovia.org)
+> - An app to send notifications to the participants: For this we will use **M-path**
+> 
+> **Learning Objectives:** In this tutorial, you will learn the following:
+> 
+> - Use an existing task to collect single-timepoint data using Pavlovia
+> - Use an existing task to collect data in an ESM study using Pavlovia and m-Path
+> - Adjust an existing task in JavaScript/Python
+> - Create a new task in JavaScript/Python
+> - Use Git for version control
 
 ---
+
+## Using Pavlovia
+
+--- 
+
+### Creating an Account
+
+Before you can start using an existing task in Pavlovia, you need to create an account. You can create an account [here](https://gitlab.pavlovia.org/users/sign_up). Be sure to use your **university email**, as this will grant you a free license for Pavlovia. During account creation, they will ask for your **role** and **purpose** for using Pavlovia. We recommend **Data Analyst** and **Using Git**, but feel free to choose what fits best.
+
+### Pavlovia Tour
+
+On the main page of Pavlovia, you will see different tabs. **Docs** is the documentation site where you can find more information about the platform and how to use it. **Explore** contains all experiments that have been uploaded to Pavlovia. These experiments are free to **fork**, which means creating a copy that you can use as your own. In **Dashboard**, you can see your profile and manage your experiments. Finally, in the **Store**, you will find Pavlovia merchandise and services.
+
+### Using Existing Task
+
+In the previous section, we touched on **forking**. By doing a **fork**, we essentially copy the **repository** (a folder with all the experiment contents), which allows us to make changes to the **code** without affecting the original project.
+
+To fork a project, go to Explore and look up an experiment you want to copy. For simplicity, in this tutorial we will look at the Featured Experiments. Here you can find a task named "antisaccade". Hover your mouse over the experiment and click on "view code." It should look like this:
+<img src="https://i.ibb.co/HftB2VYr/Captura-de-pantalla-2026-03-22-101928.png" alt="Captura-de-pantalla-2026-03-22-101928" width ="200" >
+
+This will direct you to the repository page of the experiment. In this repository, you will find all the files that make up the experiment. Here, you will want to "fork" the repository. You can do this by clicking on "Forks."
+
+<img src="https://i.ibb.co/PGkvQvc3/Captura-de-pantalla-2026-03-22-103246.png" alt="Captura-de-pantalla-2026-03-22-103246" ></a>
+
+Once clicked, it will redirect you to the "Fork Project" page. Here, you can leave things as they are or change the project name to whatever you want. For this tutorial, I will change the name to "my first data." It is also necessary to select a "Namespace"; in this case, it will be your username. Then click on "Fork Project."
+
+This will lead you to the GitLab project overview page. There is nothing to do here. To get your experiment up and running, go back to the dashboard at Pavlovia.org. You can click [here](https://pavlovia.org/dashboard?tab=1) to be redirected to the dashboard.
+
+You will see that your experiment is "inactive." Before you can collect data, you will want to change its status to "Piloting" or "Running." **Piloting** is for testing. You can run the task for free, but **data is not saved permanently** in the database (it is usually provided as a temporary download at the end of the session). Use this mode to ensure your stimuli and triggers are working correctly. **Running**, on the other hand, is for actual data collection. In this mode, Pavlovia will save every participant's data to the server automatically.
+
+To change the status of your experiment, click on the row where your experiment appears, like this:
+
+<img src="https://i.ibb.co/TDY5tqm5/Captura-de-pantalla-2026-03-22-105306.png" alt="Captura-de-pantalla-2026-03-22-105306">
+
+After you click this, a page will appear with the option to change the status of your experiment to "Running." Once you click on "Running," the status will change. There will also be a URL, as highlighted in the image below. You can send this URL to your participants to gather data.
+
+<img src="https://i.ibb.co/MyL52VPV/Captura-de-pantalla-2026-03-22-182421.png" alt="Captura-de-pantalla-2026-03-22-182421" border="0" /></a>
+
+<img src="https://i.ibb.co/MxXgS8K0/Captura-de-pantalla-2026-03-22-105751.png" alt="Captura-de-pantalla-2026-03-22-105751" border="0" /></a>
+
+Once the participant finishes the task, the data is stored in your repository. You can access this data in two ways:
+
+* **Download Button:** On your experiment page, click the **"Download Results"** button to get a ZIP file containing all individual CSV or JSON files.
+* **[GitLab](https://gitlab.pavlovia.org/)** **(Recommended)** Alternatively, you can find the data in the folder within your experiment's GitLab repository (click on the project to view all files in the repository). The folder is named "data."
+
+Since we forked another person's repository, we also copied all previously collected data. Therefore, the "data" folder in your GitLab repository, or in your ZIP file, contains earlier data as well. To find the latest addition to your data folder, check "Last commit" and click on the file to view the data.
+<img src="https://i.ibb.co/Xfwz1P27/Captura-de-pantalla-2026-03-22-184826.png" alt="Captura-de-pantalla-2026-03-22-184826" border="0">
+
+**Congratulations** you now know how to use existing tasks in Pavlovia to create your own forked repository, administer tasks via URL, and access the data gathered by your task.
+
+​
+
+​
+
+--- 
 
 ## How to Use This Guide
 
@@ -22,7 +88,7 @@ This guide is organized into two levels.
 
 | Level | Goal | Steps to complete |
 |-------|------|-------------------|
-| **Level 1** | Powershell and Downloads/Accounts | Sections 1 & 2|
+| **Level 1** | Powershell and Downloads| Sections 1 & 2|
 | **Level 2** | Familiarizing with applications | Sections 3,  4, & 5|
 
 ---
@@ -33,8 +99,7 @@ This guide is organized into two levels.
 
 | Tool | What it does |
 |------|--------------|
-| **Miniconda** | Installs and manages Python environments  |
-| **psychopy_env** | A Python 3.10 environment pre-loaded with PsychoPy and all required packages to |
+| **Docker Desktop** |Makes it possible to run PsychoPy tasks|
 | **VS Code** | Code editor where you read, edit, and run experiment scripts |
 | **PsychoPy** | The Python library that actually runs cognitive tasks |
 | **Pavlovia** | Hosts the web version of tasks so participants can do them on a phone |
@@ -71,21 +136,15 @@ Windows blocks scripts by default. You must change this setting once before anyt
 
 Download and install these applications in order to get your computer ready for programming.
 
-### 2a. Required for all levels
+### 2a. What to Download
 
 | # | What | Where to get it | Notes |
 |---|------|-----------------|-------|
 | 1 | **VS Code** | [Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/Download) | Choose the Windows installer or MacOs depending on your PC |
-| 2 | **Miniconda** | [Download Anaconda Distribution Anaconda](https://www.anaconda.com/download) | Scroll to the bottom to find miniconda installer and follow the installation process |
-| 3 | **psychopy_env.yml** | [github.com/rcarrioncanonico/Momentary-Assesment-Tools](https://github.com/rcarrioncanonico/Momentary-Assesment-Tools/blob/main/psychopy_env.yml) | Click on Downloads and save as `psychopy_env.yml` be sure its not saved as a txt file |
+| 2 | **Docker Desktop** | [Download Docker Desktop](https://www.docker.com/products/docker-desktop/) |Download based on your operating system, for Windows AMD means processors such as Intel or AMD|
 | 4 | **Git** | [Git - Install](https://git-scm.com/install/) | Necessary to Push code to Pavlovia |
 
 > **Important:** During Git Installation there will be a window that will ask you to choose a default editor, be sure to select Visual Studio Code just like in this image:<img src="https://i.imgur.com/0J9Z70F.jpeg" alt="Git editor selection" width="325"> This is the only modification you have to do during Git installation.
-
-> **Important:** During Miniconda Installation be sure to leave this box unchecked like in this image: <img src="https://i.imgur.com/wnWlWSU.png" alt="Miniconda installation checkbox" width="450">
-
-<br>
-<br>
 
 ### 2b. Necessary Accounts
 
@@ -100,41 +159,6 @@ Download and install these applications in order to get your computer ready for 
 | # | What | Where to get it | Notes |
 |---|------|-----------------|-------|
 | 8 | **PsychoPy Standalone** | [psychopy.org/download.html](https://www.psychopy.org/download.html) | In-case you are curious how PsychoPy looks like|
-
----
-
-## Section 3 — Miniconda Use
-
-Once Miniconda is intalled you will have a new application called **Anaconda Prompt** which looks like this:
-
-<img src="https://i.imgur.com/8wSNduI.png" alt="Anaconda Prompt" width="200">
-
-To build the `psychopy_env` workspace that we need for all scripts to run PsychoPy tasks we need to:
-
-1. Press `Win`, type **Anaconda Prompt**, and open it (similar to **section 1**).
-   <br>
-   <br>
-2. **Skip this step if your psychopy_env.yml is in the Downloads folder**. To change where **Anaconda Prompt** searches for the folder containing the saved psychopy_env.yml . Copy and paste the code below:
-
-<br>**cd %USERPROFILE%**
-
-3. Create the PsychoPy environment by running this code:
-   <br> <br>
-   **conda env create -f psychopy_env.yml**
-   <br> <br>
-4. This downloads and installs all required packages. It may take 5–15 minutes.
-   <br> <br>
-5. To confirm it succeeded — you should see a `psychopy_env` folder here:
-
-C:\Users\<YourName>\miniconda3\envs\psychopy_env
-
-6.) You can also check by running this code in **Anaconda Prompt**:
-
-**conda env list**
-
-`psychopy_env` should appear in the list.
-
-It will appear something like this: <img src="https://i.imgur.com/vvyGGit.png" alt="conda env list output" width="325">
 
 ---
 
@@ -174,9 +198,6 @@ For now that is all you have to do in GitHub, but if you wish to know more about
 
 ## Section 5 — VS Code Familiarization
 
-
-
-
 ### 5a. User Interface
 
 Just like GitHUb, VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
@@ -210,190 +231,6 @@ On the "Activity Bar" on the left hand sight of VS-Code you will see an Icon wit
 5. 
 
 **Congratulations!** you are free to explore the files of the repository inside VS-Code. From now on this tutorial will take place inside VS-Code. All the files needed to continue were already open during section **5c**. Your next step is to open Jupyter_Starter file inside VS-Code.
-
-```
-
-```
-
-```
-
-```
-
-Quickstart Guide
-EMA In-Lab Protocol — Tilburg University
-
-Who is this guide for?
-Students with little or no programming experience who need to set up and use
-PsychoPy-based cognitive tasks on a Windows PC. No prior coding knowledge is assumed.
-
-How to Use This Guide
-This guide is organized into two levels.
-
-Level	Goal	Steps to complete
-Level 1	Powershell and Downloads/Accounts	Sections 1 & 2
-Level 2	Familiarizing with applications	Sections 3, 4, & 5
-The Big Picture: How the Tools Connect
-Big Picture Diagram
-Tool	What it does
-Miniconda	Installs and manages Python environments
-psychopy_env	A Python 3.10 environment pre-loaded with PsychoPy and all required packages to
-VS Code	Code editor where you read, edit, and run experiment scripts
-PsychoPy	The Python library that actually runs cognitive tasks
-Pavlovia	Hosts the web version of tasks so participants can do them on a phone
-m-Path	Sends scheduled notifications to participants and links them to Pavlovia
-Section 1 — Enable Script Execution (Windows only)
-Powershell is a a command-line shell and scripting platform for automation and systems management. In other words, it can controll your computer similar to what we do when tuning our settings in our smartphones.
-Windows blocks scripts by default. You must change this setting once before anything else will work. This is the first line of code you going to run!
-
-Press Win, type Powershell, right-click it, and choose Run as Administrator
-
-
-
-Paste the following command and press Enter:
-
-
-
-
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-
-
-
-Type Y and press Enter if prompted to confirm.
-
-
-
-
-Close PowerShell.
-
-Why? Without this change, Conda and many other tools will silently fail to activate environments or run scripts on Windows.
-
-
-Section 2 — Downloads Checklist
-Download and install these applications in order to get your computer ready for programming.
-
-2a. Required for all levels
-#	What	Where to get it	Notes
-1	VS Code	Download Visual Studio Code - Mac, Linux, Windows	Choose the Windows installer or MacOs depending on your PC
-2	Miniconda	Download Anaconda Distribution Anaconda	Scroll to the bottom to find miniconda installer and follow the installation process
-3	psychopy_env.yml	github.com/rcarrioncanonico/Momentary-Assesment-Tools	Click Raw, then Ctrl+S to save as psychopy_env.yml
-4	Git	Git - Install	Necessary to Push code to Pavlovia
-Important: During Git Installation there will be a window that will ask you to choose a default editor, be sure to select Visual Studio Code just like in this image:Git editor selectionThis is the only modification you have to do during Git installation.
-
-Important: During Miniconda Installation be sure to leave this box unchecked like in this image:Miniconda installation checkbox
-
-
-
-2b. Necessary Accounts
-#	What	Where to get it	Notes
-5	Github	GitHub	Needed to sync with VS-Code and to access AI Copilot for easy coding
-6	Pavlovia account	pavlovia.org	Free for researchers
-7	m-Path account	m-path.io	Coordinate with your supervisor
-2c. Optional additional program:
-#	What	Where to get it	Notes
-8	PsychoPy Standalone	psychopy.org/download.html	In-case you are curious how PsychoPy looks like
-Section 3 — Miniconda Use
-Once Miniconda is intalled you will have a new application called Anaconda Prompt which looks like this:
-
-Anaconda Prompt
-To build the psychopy_env workspace that we need for all scripts to run PsychoPy tasks we need to:
-
-Press Win, type Anaconda Prompt, and open it (similar to section 1).
-
-
-
-Skip this step if your psychopy_env.yml is in the Downloads folder. To change where Anaconda Prompt searches for the folder containing the saved psychopy_env.yml . Copy and paste the code below:
-
-cd %USERPROFILE%
-
-Create the PsychoPy environment by running this code:
-
-
-
-conda env create -f psychopy_env.yml
-
-
-This downloads and installs all required packages. It may take 5–15 minutes.
-
-
-To confirm it succeeded — you should see a psychopy_env folder here:
-C:\Users<YourName>\miniconda3\envs\psychopy_env
-
-6.) You can also check by running this code in Anaconda Prompt:
-
-conda env list
-
-psychopy_env should appear in the list.
-
-It will appear something like this:conda env list output
-
-Section 4: GitHub Familiarization
-Like anything new, GitHub looks scary and contains a lot of new terminology which we are not use to. Terms like "Repositories", "Commit", "Pull Requests" and "Branch" are common terms in the GitHub community
-
-You have access to this document through the public repository known as EMA-In-Lab-Protocol (Link). A repository is nothing more than a big folder which was uploaded to the cloud in GitHub. It contains different files such as this PDF document, other file types such as jupyter notebook files (.ipynb), python files (.py) and can also contain even more folders inside of it.
-
-As you can see the EMA-In-Lab-Protocol has a lot of different files in it. This Quick Guide PDF was just one of those files inside that repository. In order to use this protocol we will want to clone (download) the whole repository into your computer.
-
-There are different ways of saving (cloning) a repository into your computer. The simplest way of doing that is to go to the "Green Box that has "Code written on it, click on it and click Download Zip
-
-GitHub download zip
-Once the Zip file is download. You will find it in your files in "Downloads", hover the cursor on the zip file, right click and then click on extract everything and confirm extraction.
-
-A new folder with the same name of the zip file will be created, be sure to remember where it is located, which would be in the Downloads folder if you don´t decide to change its location.
-
-Extracted folder
-Recommended- Obtain Copilot Pro
-Coding has never been easier with the help of AI and students and teachers can get Copilot Pro for free for 2 years. Be sure to link your account to the GitHub Education benefits following the instructions of this Link.
-
-For now that is all you have to do in GitHub, but if you wish to know more about it, I recommend this quick 10 minute video to know more about GitHub.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Section 5 — VS Code Familiarization
-5a. User Interface
-Just like GitHUb, VS-Code can be a little bit confusing and overwhelming as soon as you start it up, don´t worry the user-interface is pretty friendly once you get use to it.
-Since it is better to visualize someone using VS-Code rather than in text, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of installing and opening VS-Code. These 7 minutes also explains the "Explorer" part of the "Activity Bar" of VS-Code.
-Be sure to have VS-Code open along these videos so you can familiarize yourself with the application.
-
-
-
-Another recommended video is the following, in which the first 12 minutes are enough for you to know the other functions such as extensions and the use of Copilot AI.
-
-
-
-5b. Installing Necessary Extension and Linking GitHub.
-As this tutorial works within the VS-Code enviroment, we are going to need to install some extensions to run other types of files such as Jupyter Notebook files known to finish in .ipynb.
-
-1.) Open VS Code.
-2.) Click the Extensions icon in the left sidebar (it looks like four squares, or press Ctrl+Shift+X).
-3.) Search for Jupyter (publisher: Microsoft) and click Install.Jupyter extension
-4.) Search for GitHub Copilot Chat (publisher: GitHub) and click InstallGitHub Copilot Chat extension
-5.) Search for Python (publisher: Microsoft) and click InstallPython extension
-On the "Activity Bar" on the left hand sight of VS-Code you will see an Icon with a cat on it, click on it and sign in with your Github account in order to sync VS-Code with Github and be able to use all of the AI pro tools. If you wish to know more about how GitHub works inside VS-Code you can check out this link: Working with GitHub in VS Code
-
-5c. Open the Protocol Folder
-1.) In VS Code, go to File --> Open Folder. You can find "File" on the top-left corner of VS-Code
-2.) Navigate to Downloads Folder
-3.) Select the folder known as EMA-In-Lab-Protocol-main (the one we downloaded and extracted in Section 4.Folder selection
-4.) Once selected, you will see all of the files of the repository in the "Explorer" icon of the "Activity Bar" which is the "paper looking" icon on the left hand side of VS-Code.
-Congratulations! you are free to explore the files of the repository inside VS-Code. From now on this tutorial will take place inside VS-Code. All the files needed to continue were already open during section 5c. Your next step is to open Jupyter_Starter file inside VS-Code.
-
 
 ​
 
