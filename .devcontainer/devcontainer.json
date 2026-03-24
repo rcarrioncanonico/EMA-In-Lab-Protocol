@@ -4,7 +4,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "denoland.vscode-deno",
         "ms-toolsai.jupyter"
       ],
       "settings": {

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phaser Task Stage</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+</head>
+<body style="margin:0; background:#000;">
+    <div id="phaser-game"></div>
+    <script>
+        // This part waits for the "Script" from the Notebook
+        const urlParams = new URLSearchParams(window.location.search);
+        const taskCode = urlParams.get('code');
+        
+        if (taskCode) {
+            // It "evaluates" the code sent from the student's notebook
+            eval(decodeURIComponent(taskCode));
+        }
+    </script>
+</body>
+</html>
