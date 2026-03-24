@@ -12,5 +12,6 @@
       }
     }
   },
-  "postCreateCommand": "deno jupyter --install"
+  "postCreateCommand": "deno jupyter --install", "postCreateCommand": "deno run --allow-net --allow-read https://deno.land/std@0.190.0/http/file_server.ts --port 8080 &"
+  
 }

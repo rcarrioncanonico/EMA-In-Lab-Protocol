@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Phaser Task Stage</title>
+    <title>Phaser Lab Stage</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
 </head>
-<body style="margin:0; background:#000;">
+<body style="margin:0; background:#222; overflow:hidden; display:flex; justify-content:center; align-items:center; height:100vh;">
     <div id="phaser-game"></div>
     <script>
-        // This part waits for the "Script" from the Notebook
-        const urlParams = new URLSearchParams(window.location.search);
-        const taskCode = urlParams.get('code');
+        // 2. Look for the "code" inside the URL
+        const params = new URLSearchParams(window.location.search);
+        const studentCode = params.get('code');
         
-        if (taskCode) {
-            // It "evaluates" the code sent from the student's notebook
-            eval(decodeURIComponent(taskCode));
+        if (studentCode) {
+            try {
+                // 3. Run the student's JavaScript logic
+                eval(decodeURIComponent(studentCode));
+            } catch (e) {
+                document.body.innerHTML = `<h1 style="color:red; font-family:sans-serif;">Code Error: ${e.message}</h1>`;
+            }
+        } else {
+            document.body.innerHTML = `<h1 style="color:white; font-family:sans-serif;">Waiting for Script...</h1>`;
         }
     </script>
 </body>
