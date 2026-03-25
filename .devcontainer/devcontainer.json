@@ -1,6 +1,13 @@
 {
   "name": "Cognitive ESM Lab (JS + Phaser)",
   "image": "denoland/deno:latest",
+  "forwardPorts": [8080], 
+  "portsAttributes": {
+    "8080": {
+      "label": "Phaser Stage",
+      "onAutoForward": "openBrowser"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,5 +20,5 @@
     }
   },
   "postCreateCommand": "deno jupyter --install",
-  "postStartCommand": "deno run -A jsr:@std/http/file-server --port 8080"
+  "postStartCommand": "deno cache jsr:@std/http/file-server"
 }
