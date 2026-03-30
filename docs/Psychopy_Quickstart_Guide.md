@@ -27,9 +27,9 @@
 
 ---
 
-## Using Pavlovia
+## Using Pavlovia & Existing Task
 
---- 
+---
 
 ### Creating an Account
 
@@ -76,26 +76,45 @@ Since we forked another person's repository, we also copied all previously colle
 
 **Congratulations** you now know how to use existing tasks in Pavlovia to create your own forked repository, administer tasks via URL, and access the data gathered by your task.
 
-​
-
-​
-
---- 
-
-## How to Use This Guide
-
-This guide is organized into two levels.
-
-| Level | Goal | Steps to complete |
-|-------|------|-------------------|
-| **Level 1** | Powershell and Downloads| Sections 1 & 2|
-| **Level 2** | Familiarizing with applications | Sections 3,  4, & 5|
-
 ---
+# Adjusting an Existing Task
+
+Now that you know how to use an existing task, you may want to make some adjustments to it. For example, you may want to change the instructions, add a new stimulus, or modify the timing of the task. To do this, you will need to edit the code of the task. To do so you will need to use a code editor, and for this tutorial, we will use VS Code inside Github Codespace. In the following sections, we will explain how to access Github Codespace and how to use it to edit the code of your task.
+
+## Accessing Github Codespace
+
+Github CodeSpace is a cloud-based, customizable development enviroment (IDE) that allows people to build, code and debug projects in their browser, VS-Code or VS-code in the browser, without the need to download anything. It provides a pre-configured virtual machine that runs in the cloud.
+
+In this tutorial we are going to use Github Codespace which has already been configure as a VS-Code interface with a Jupyter Notebook extension and a Deno kernel which will allows us to code using JavaScript inside Jupyter Notebook.
+
+If this sounds a bit confusing it is because it is. We are essentially have a browser tab which is a virtual machine running in a cloud that has all the tools for ESM task creation and modification.
+
+To access the Github Codespace you will need a Github account, you can create one [here](https://github.com/). Once you have your account you can click on this [repository](https://github.com/rcarrioncanonico/ESM-JavaScript-Tutorial) to go to this tutorials repository. You will have to go to the **Green Box** where it says **Use this template**, click on it, click on **Open in a codespace** and then click on just like in the image below:
+
+<img src="https://i.ibb.co/mV5V3yK9/Captura-de-pantalla-2026-03-27-172751.png" alt="Captura-de-pantalla-2026-03-27-172751" border="0" /></a>
+
+Once you click on "Open in a codespace" it will take a few seconds to load and then you will be able to see the VS-Code interface with all the files of the repository.For starters, we will work with the file named "Jupyter_Starter.ipynb" which is a Jupyter Notebook file that contains the basic of how Jupyter Notebook operates and contains some fundamental information about JavaScript. 
+
+It is important to know that changes done in your own codespace will be saved in your own workspace and will not affect the original repository. This means that you can make changes to the code without worrying about breaking anything for other people. Just be sure to not eliminate your codespace, if you do so, all the changes you made will be lost and you will have to create a new codespace and start from scratch.
+
+Alternatively you can fork this repository, similarly to what we did in Pavlovia, and then open the codespace from your own repository, this way you can have a copy of the code in your own repository and you can also make changes to it without worrying about losing it. To do this, you can follow the same steps as before but instead of clicking on "Open in a codespace" you will click on "create new repository" and then follow the same steps as before.
+
+If you are overwhelmed by the VS-Code interface here is an image with the labels of the most important parts of the interface.
+
+<img src="https://i.ibb.co/xcdwnC6/Gemini-Generated-Image-xt469ext469ext46.png" alt="Gemini-Generated-Image-xt469ext469ext46" border="0" /></a>
+
+Alternatively, I recommend you to watch the first 7 minutes of this video which explains the very initial steps of installing and opening VS-Code. These 7 minutes also explains the "Explorer" part of the "Activity Bar" of VS-Code.
+[VS Code for Absolute Beginners](https://www.youtube.com/watch?v=lWEKiak0WVU)
+
+Another recommended video is the following, in which the first 12 minutes are enough for you to know the other functions such as extensions and the use of Copilot AI.
+
+[Learn Visual Studio Code in 15 minutes: 2026 Official Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=f8_uF_IDV50)
+
+
 
 ## The Big Picture: How the Tools Connect
 
-<img src="https://i.imgur.com/AQR1vt8.jpeg" alt="Big Picture Diagram" width="650">
+<img src="https://i.ibb.co/sJHJQQXd/Gemini-Generated-Image-1q3pmk1q3pmk1q3p.png" alt="Gemini-Generated-Image-1q3pmk1q3pmk1q3p" border="0" width ="650">
 
 | Tool | What it does |
 |------|--------------|
@@ -106,32 +125,6 @@ This guide is organized into two levels.
 | **m-Path** | Sends scheduled notifications to participants and links them to Pavlovia |
 
 ---
-
-## Section 1 — Enable Script Execution (Windows only)
-
-Powershell is a **a command-line shell and scripting platform for automation and systems management**. In other words, it can controll your computer similar to what we do when tuning our settings in our smartphones.
-Windows blocks scripts by default. You must change this setting once before anything else will work. This is the first line of code you going to run!
-
-1. Press **Win**, type **Powershell**, right-click it, and choose **Run as Administrator**
-   <br> <img src="https://i0.wp.com/morgantechspace.com/wp-content/uploads/2021/09/powershell-run-as-administrator-1.png?w=973&ssl=1" width="400">
-2. **Paste** the following **command** and press **Enter**:
-   <br>
-   <br>
-   
-   `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
-   <br>
-   <br>
-3. Type `Y` and press `Enter` if prompted to confirm.
-   <br>
-   <br>
-4. Close PowerShell.
-
-> **Why?** Without this change, Conda and many other tools will silently fail to activate environments or run scripts on Windows.
-
----
-
-<br>
-
 ## Section 2 — Downloads Checklist
 
 Download and install these applications in order to get your computer ready for programming.
@@ -140,9 +133,7 @@ Download and install these applications in order to get your computer ready for 
 
 | # | What | Where to get it | Notes |
 |---|------|-----------------|-------|
-| 1 | **VS Code** | [Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/Download) | Choose the Windows installer or MacOs depending on your PC |
-| 2 | **Docker Desktop** | [Download Docker Desktop](https://www.docker.com/products/docker-desktop/) |Download based on your operating system, for Windows AMD means processors such as Intel or AMD|
-| 4 | **Git** | [Git - Install](https://git-scm.com/install/) | Necessary to Push code to Pavlovia |
+| 1 | **Git** | [Git - Install](https://git-scm.com/install/) | Necessary to Push code to Pavlovia |
 
 > **Important:** During Git Installation there will be a window that will ask you to choose a default editor, be sure to select Visual Studio Code just like in this image:<img src="https://i.imgur.com/0J9Z70F.jpeg" alt="Git editor selection" width="325"> This is the only modification you have to do during Git installation.
 
