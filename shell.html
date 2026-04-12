@@ -7,9 +7,13 @@
 </head>
 <body style="margin:0; background:#222; overflow:hidden; display:flex; justify-content:center; align-items:center; height:100vh;">
     <div id="phaser-game"></div>
+    <div id="stage-status" style="position:fixed; top:16px; left:50%; transform:translateX(-50%); color:#fff; font-family:sans-serif; background:rgba(0,0,0,0.55); padding:8px 12px; border-radius:6px;">Waiting for script from notebook...</div>
     <script>
         function showMessage(message, color) {
-            document.body.innerHTML = `<h1 style="color:${color}; font-family:sans-serif;">${message}</h1>`;
+            const statusEl = document.getElementById("stage-status");
+            if (!statusEl) return;
+            statusEl.textContent = message;
+            statusEl.style.color = color;
         }
 
         function runStudentCode(studentCode) {
@@ -20,6 +24,7 @@
 
             try {
                 eval(studentCode);
+                showMessage("Script loaded", "#9df59d");
             } catch (e) {
                 showMessage(`Code Error: ${e.message}`, "red");
             }
