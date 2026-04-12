@@ -7,42 +7,63 @@
 <body style="margin:0; background:#222; overflow:hidden; display:flex; justify-content:center; align-items:center; height:100vh;">
     <div id="phaser-game"></div>
     <script>
-        // 2. Look for the "code" inside the URL hash first (safer for longer payloads),
-        // then fall back to query params for backward compatibility.
-        const rawHash = window.location.hash || '';
-        const hashCode = rawHash.startsWith('#code=') ? rawHash.slice(6) : null;
-        const queryCode = new URLSearchParams(window.location.search).get('code');
+        const stageOrigin = window.location.origin;
 
-        let studentCode = hashCode !== null ? hashCode : queryCode;
-
-        // Hash payload is percent-encoded by play(taskCode); decode it.
-        if (hashCode !== null && typeof studentCode === 'string') {
-            try {
-                studentCode = decodeURIComponent(studentCode);
-            } catch (_e) {
-                // Keep original string; eval will surface a meaningful syntax error.
-            }
+        function showMessage(message, color) {
+            document.body.innerHTML = `<h1 style="color:${color}; font-family:sans-serif;">${message}</h1>`;
         }
 
-        // Safety: if still percent-encoded, try one more decode pass.
-        if (typeof studentCode === 'string' && /%[0-9A-Fa-f]{2}/.test(studentCode)) {
-            try {
-                studentCode = decodeURIComponent(studentCode);
-            } catch (_e) {
-                // Ignore decode failure and continue with best-effort payload.
+        function runStudentCode(studentCode) {
+            if (!studentCode) {
+                showMessage("Waiting for Script...", "white");
+                return;
             }
-        }
-        
-        if (studentCode) {
+
             try {
-                // 3. Run the student's JavaScript logic
                 eval(studentCode);
             } catch (e) {
-                document.body.innerHTML = `<h1 style="color:red; font-family:sans-serif;">Code Error: ${e.message}</h1>`;
+                showMessage(`Code Error: ${e.message}`, "red");
             }
-        } else {
-            document.body.innerHTML = `<h1 style="color:white; font-family:sans-serif;">Waiting for Script...</h1>`;
         }
+
+        // Preferred transport: notebook opens shell.html, receives READY, then posts RUN_TASK.
+        window.addEventListener("message", (event) => {
+            if (event.origin !== stageOrigin) return;
+            if (!event.data || event.data.type !== "RUN_TASK") return;
+            runStudentCode(event.data.code);
+        });
+
+        if (window.opener && !window.opener.closed) {
+            try {
+                window.opener.postMessage({ type: "SHELL_READY" }, stageOrigin);
+            } catch (_e) {
+                // Ignore opener messaging failures and continue.
+            }
+        }
+
+        // Legacy fallback: still support code in URL during migration.
+        const rawHash = window.location.hash || "";
+        const hashCode = rawHash.startsWith("#code=") ? rawHash.slice(6) : null;
+        const queryCode = new URLSearchParams(window.location.search).get("code");
+        let legacyCode = hashCode !== null ? hashCode : queryCode;
+
+        if (hashCode !== null && typeof legacyCode === "string") {
+            try {
+                legacyCode = decodeURIComponent(legacyCode);
+            } catch (_e) {
+                // Ignore decode failure and keep best-effort payload.
+            }
+        }
+
+        if (typeof legacyCode === "string" && /%[0-9A-Fa-f]{2}/.test(legacyCode)) {
+            try {
+                legacyCode = decodeURIComponent(legacyCode);
+            } catch (_e) {
+                // Ignore decode failure and keep best-effort payload.
+            }
+        }
+
+        runStudentCode(legacyCode);
     </script>
 </body>
 </html>
