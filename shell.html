@@ -14,7 +14,7 @@
         if (studentCode) {
             try {
                 // 3. Run the student's JavaScript logic
-                eval(decodeURIComponent(studentCode));
+                eval(studentCode);
             } catch (e) {
                 document.body.innerHTML = `<h1 style="color:red; font-family:sans-serif;">Code Error: ${e.message}</h1>`;
             }
